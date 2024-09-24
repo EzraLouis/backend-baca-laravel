@@ -20,9 +20,9 @@ class UserController extends Controller
             ->when($request->input('name'), function ($query, $name) {
                 return $query->where('name', 'like', '%' . $name . '%');
             })
-            ->select('id', 'name', 'email', 'phone', DB::raw('DATE_FORMAT(created_at, "%d %M %Y") as created_at'))
+            ->select('id', 'name', 'email', 'username', 'avatar', 'role', DB::raw('DATE_FORMAT(created_at, "%d %M %Y") as created_at'))
             ->orderBy('id', 'desc')
-            ->paginate(10);
+            ->paginate(25);
         return view('pages.users.index', compact('users'));
     }
 
@@ -39,11 +39,12 @@ class UserController extends Controller
 
         User::create([
             'name' => $request['name'],
+            'username' => $request['username'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
             'roles' => $request['roles'],
-            'phone' => $request['phone'],
-            'address' => $request['address'],
+            'avatar' => $request['avatar'],
+            'role' => $request['user, admin'],
         ]);
 
         return redirect(route('user.index'))->with('success', 'New User Successfully');

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Users')
+@section('title', 'Renungan')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -11,12 +11,12 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>All Users</h1>
+                <h1>All Renungan</h1>
 
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                    <div class="breadcrumb-item"><a href="#">Users</a></div>
-                    <div class="breadcrumb-item">All Users</div>
+                    <div class="breadcrumb-item"><a href="#">Renungan</a></div>
+                    <div class="breadcrumb-item">All Renungan</div>
                 </div>
             </div>
             <div class="section-body">
@@ -31,15 +31,15 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>All Users</h4>
+                                <h4>All Renungans</h4>
                                 <div class="section-header-button">
-                                    <a href="{{ route('user.create') }}" class="btn btn-primary">New User</a>
+                                    <a href="{{ route('renungan.create') }}" class="btn btn-primary">New Renungan</a>
                                 </div>
                             </div>
                             <div class="card-body">
 
                                 <div class="float-right">
-                                    <form method="GET", action="{{ route('user.index') }}">
+                                    <form method="GET", action="{{ route('renungan.index') }}">
                                         <div class="input-group">
                                             <input type="text" class="form-control" placeholder="Search" name="name">
                                             <div class="input-group-append">
@@ -52,46 +52,35 @@
                                 <div class="clearfix mb-3"></div>
 
                                 <div class="table-responsive">
-                                    <table class="table-striped table">
+                                    <table class="table-striped table table-bordered table-md table hover">
                                         <tr>
-
-                                            <th>Name</th>
-                                            <th>Username</th>
-                                            <th>Email</th>
-                                            <th>Avatar</th>
-                                            <th>Role</th>
-                                            <th>Created At</th>
+                                            <th>No</th>
+                                            <th>Title</th>
+                                            <th>Bacaan</th>
+                                            <th>Date Renungan</th>
                                             <th>Action</th>
                                         </tr>
-                                        @foreach ($users as $user)
+                                        @foreach ($renungans as $renungan)
                                             <tr>
+                                                <td>{{ $loop->iteration }}</td>
                                                 <td>
-                                                    {{ $user->name }}
+                                                    {{ $renungan->title }}
                                                 </td>
                                                 <td>
-                                                    {{ $user->username }}
+                                                    {{ $renungan->bacaan }}
                                                 </td>
                                                 <td>
-                                                    {{ $user->email }}
-                                                </td>
-                                                <td>
-                                                    {{ $user->avatar }}
-                                                </td>
-                                                <td>
-                                                    {{ $user->role }}
-                                                </td>
-                                                <td>
-                                                    {{ $user->created_at }}
+                                                    {{ $renungan->date_renungan }}
                                                 </td>
                                                 <td>
                                                     <div class="d-flex justify-content-center">
-                                                        <a href='{{ route('user.edit', $user->id) }}'
+                                                        <a href='{{ route('renungan.edit', $renungan->id) }}'
                                                             class="btn btn-sm btn-info btn-icon">
                                                             <i class="fas fa-edit"></i>
                                                             Edit
                                                         </a>
 
-                                                        <form action="{{ route('user.destroy', $user->id) }}" method="POST"
+                                                        <form action="{{ route('renungan.destroy', $renungan->id) }}" method="POST"
                                                             class="ml-2">
                                                             <input type="hidden" name="_method" value="DELETE" />
                                                             <input type="hidden" name="_token"
@@ -106,12 +95,10 @@
                                             </tr>
                                         @endforeach
 
-
-
                                     </table>
                                 </div>
                                 <div class="float-right">
-                                    {{ $users->withQueryString()->links() }}
+                                    {{ $renungans->withQueryString()->links() }}
                                 </div>
                             </div>
                         </div>
