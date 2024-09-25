@@ -42,6 +42,19 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+                                <label>Username</label>
+                                <input type="text"
+                                    class="form-control @error('username')
+                                    is-invalid
+                                @enderror"
+                                    name="username" value="{{ $user->username }}" readonly>
+                                @error('username')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
                                 <label>Email</label>
                                 <input type="email"
                                     class="form-control @error('email')
@@ -54,38 +67,18 @@
                                     </div>
                                 @enderror
                             </div>
-
                             <div class="form-group">
-                                <label>Phone</label>
-                                <input type="text" class="form-control" name="phone" value="{{ $user->phone }}">
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-label">Roles</label>
-                                <div class="selectgroup w-100">
-                                    <label class="selectgroup-item">
-                                        <input type="radio" name="roles" value="admin" class="selectgroup-input"
-                                            @if ($user->roles == 'admin') checked @endif>
-                                        <span class="selectgroup-button">Admin</span>
-                                    </label>
-                                    <label class="selectgroup-item">
-                                        <input type="radio" name="roles" value="dosen" class="selectgroup-input"
-                                            @if ($user->roles == 'dosen') checked @endif>
-                                        <span class="selectgroup-button">Dosen</span>
-                                    </label>
-                                    <label class="selectgroup-item">
-                                        <input type="radio" name="roles" value="mahasiswa" class="selectgroup-input"
-                                            @if ($user->roles == 'mahasiswa') checked @endif>
-                                        <span class="selectgroup-button">Mahasiswa</span>
-                                    </label>
-
-                                </div>
-                            </div>
-                            <div class="form-group mb-0">
-                                <label>Address</label>
-                                <textarea class="form-control" data-height="150" name="address">
-                                    {{ $user->address }}
-                                </textarea>
+                                <label>Avatar</label>
+                                <input type="file"
+                                    class="form-control @error('avatar')
+                                    is-invalid
+                                @enderror"
+                                    name="avatar">
+                                @error('avatar')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                         </div>
                         <div class="card-footer text-right">
