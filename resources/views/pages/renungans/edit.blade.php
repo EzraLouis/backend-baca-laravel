@@ -109,6 +109,19 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+                                <label>Penerapan</label>
+                                <ul>
+                                    <li><input type="text" class="form-control" name="penerapan1" id="penerapan1" value="{{ $renungans->penerapan1 }}"></li>
+                                    <li><input type="text" class="form-control" name="penerapan2" id="penerapan2" value="{{ $renungans->penerapan2 }}"></li>
+                                    <li><input type="text" class="form-control" name="penerapan3" id="penerapan3" value="{{ $renungans->penerapan3 }}"></li>
+                                </ul>
+                                @error('penerapan')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
                                 <label>Doa</label>
                                 <textarea id="doa" name="doa" class="form-control" cols="30" rows="10" style="resize: none; width:100%; height:100%">{{ $renungans->doa }}</textarea>
                                 @error('doa')

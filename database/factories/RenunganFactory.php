@@ -24,6 +24,9 @@ class RenunganFactory extends Factory
             'kalimat_renung' => fake()->text(),
             'date_renungan' => fake()->date(),
             'content' => fake()->text(),
+            'penerapan1' => fake()->text(),
+            'penerapan2' => fake()->text(),
+            'penerapan3' => fake()->text(),
             'doa' => fake()->text(),
         ];
     }

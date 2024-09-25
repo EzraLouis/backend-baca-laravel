@@ -20,6 +20,9 @@ class Renungan extends Model
         'kalimat_renung',
         'date_renungan',
         'content',
+        'penerapan1',
+        'penerapan2',
+        'penerapan3',
         'doa'
     ];
 }

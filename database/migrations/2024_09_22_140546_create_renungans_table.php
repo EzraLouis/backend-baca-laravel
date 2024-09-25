@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string('kalimat_renung');
             $table->date('date_renungan');
             $table->text('content');
+            $table->string('penerapan1');
+            $table->string('penerapan2');
+            $table->string('penerapan3');
             $table->text('doa');
             $table->timestamps();
         });

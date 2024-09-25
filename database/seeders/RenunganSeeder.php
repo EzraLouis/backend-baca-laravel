@@ -25,6 +25,9 @@ class RenunganSeeder extends Seeder
                 'kalimat_renung' => 'Apakah kita pernah membahagiakan diri dengan doa?',
                 'date_renungan' => '2024-09-01',
                 'content' => 'Doa adalah kekuatan utama kita dalam menghadapi tantangan.',
+                'penerapan1' => 'Doa adalah kekuatan utama kita dalam menghadapi tantangan.',
+                'penerapan2' => 'Doa inihel bermanfaat bagi cita semua.',
+                'penerapan3' => 'Doa ini sangat bermanfaat untuk kita semua.',
                 'doa' => 'Doa ini sangat bermanfaat untuk kita semua.',
             ],
             [
@@ -35,6 +38,9 @@ class RenunganSeeder extends Seeder
                 'kalimat_renung' => 'Apakah kita pernah merenungkan Taurat TUHAN?',
                 'date_renungan' => '2024-09-05',
                 'content' => 'Kasih Tuhan tidak pernah berubah, selalu setia. Setiap harinya, kita harus berdoa dan beribadah, sehingga kita dapat mengenal Tuhan.',
+                'penerapan1' => 'Kasih Tuhan adalah Setia bagi kita semua.',
+                'penerapan2' => 'Kasih Tuhan adalah Setia bagi kita semua.',
+                'penerapan3' => 'Kasih Tuhan adalah Setia bagi kita semua.',
                 'doa' => 'Kasih Tuhan adalah Setia bagi kita semua.',
             ],
             [
@@ -45,6 +51,9 @@ class RenunganSeeder extends Seeder
                 'kalimat_renung' => 'Apakah kita pernah merenungkan kesempatan baru untuk pengharapan?',
                 'date_renungan' => '2024-09-10',
                 'content' => 'Setiap hari adalah kesempatan baru untuk pengharapan. Bukakan diri dan berdoa, dan beribadah, dan berharaplah kita dapat mengenal Tuhan.',
+                'penerapan1' => 'Pengharapan sejati adalah pengharapan yang baru dari Allah.',
+                'penerapan2' => 'Pengharapan sejati adalah pengharapan yang baru dari Allah.',
+                'penerapan3' => 'Pengharapan sejati adalah pengharapan yang baru dari Allah.',
                 'doa' => 'Pengharapan sejati adalah pengharapan yang baru dari Allah.',
             ],
         ]);

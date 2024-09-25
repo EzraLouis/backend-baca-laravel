@@ -21,7 +21,9 @@ class RenunganController extends Controller
             ->when($request->input('title'), function ($query, $title) {
                 return $query->where('title', 'like', '%' . $title . '%');
             })
-            ->select('id', 'title', 'bacaan', 'ayat_kunci', 'kalimat_prinsip', 'kalimat_renung', DB::raw('DATE_FORMAT(date_renungan, "%d %M %Y") as date_renungan'), 'content', 'doa')
+            ->select('id', 'title', 'bacaan', 'ayat_kunci', 'kalimat_prinsip', 'kalimat_renung',
+            DB::raw('DATE_FORMAT(date_renungan, "%d %M %Y") as date_renungan'), 'content',
+            'penerapan1', 'penerapan2', 'penerapan3', 'doa')
             ->orderBy('id', 'desc')
             ->paginate(25);
         return view('pages.renungans.index', compact('renungans'));
@@ -48,6 +50,9 @@ class RenunganController extends Controller
             'kalimat_renung' => $request['kalimat_renung'],
             'date_renungan' => $request['date_renungan'],
             'content' => $request['content'],
+            'penerapan1' => $request['penerapan1'],
+            'penerapan2' => $request['penerapan2'],
+            'penerapan3' => $request['penerapan3'],
             'doa' => $request['doa'],
         ]);
 

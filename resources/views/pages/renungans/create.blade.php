@@ -103,6 +103,14 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+                                <label>Penerapan</label>
+                                <ul>
+                                    <li><input type="text" class="form-control" id="penerapan1" name="penerapan1" value=""></li>
+                                    <li><input type="text" class="form-control" id="penerapan2" name="penerapan2" value=""></li>
+                                    <li><input type="text" class="form-control" id="penerapan3" name="penerapan3" value=""></li>
+                                </ul>
+                            </div>
+                            <div class="form-group">
                                 <label>Doa</label>
                                 <textarea id="doa" name="doa" class="form-control" value="doa"
                                 cols="30" rows="10" style="resize: none; width:100%; height:100%"></textarea>
