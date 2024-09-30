@@ -20,7 +20,7 @@ class UserController extends Controller
             ->when($request->input('name'), function ($query, $name) {
                 return $query->where('name', 'like', '%' . $name . '%');
             })
-            ->select('id', 'name', 'email', 'username', 'avatar', 'role', DB::raw('DATE_FORMAT(created_at, "%d %M %Y") as created_at'))
+            ->select('id', 'name', 'email', 'password', 'username', 'avatar', 'role', DB::raw('DATE_FORMAT(created_at, "%d %M %Y") as created_at'))
             ->orderBy('id', 'desc')
             ->paginate(25);
         return view('pages.users.index', compact('users'));
