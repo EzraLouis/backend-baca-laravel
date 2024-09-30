@@ -3,6 +3,8 @@
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RenunganController;
 use Illuminate\Support\Facades\Route;
+// use Illuminate\Foundation\Auth\EmailVerificationRequest;
+// use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +21,27 @@ Route::get('/', function () {
     return view('pages.auth.auth-login');
 });
 
+
 Route::middleware(['auth'])->group(function () {
     Route::get('home', function () {
         return view('pages.app.dashboard-siakad', ['type_menu' => '']);
     })->name('home');
     Route::resource('user', UserController::class);
     Route::resource('renungan', RenunganController::class);
+    // Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
+    // Route::get('/email/verify', function () {
+    //     return view('auth.verify-email');
+    // })->middleware('auth')->name('verification.notice');
+    // Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    //     $request->fulfill();
 
+    //     return redirect('/home');
+    // })->middleware(['auth', 'signed'])->name('verification.verify');
+    // Route::post('/email/verification-notification', function (Request $request) {
+    //     $request->user()->sendEmailVerificationNotification();
+
+    //     return back()->with('message', 'Verification link sent!');
+    // })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 });
 
 // Route::get('/login', function () {
