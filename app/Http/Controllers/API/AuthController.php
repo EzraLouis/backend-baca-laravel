@@ -26,7 +26,7 @@ class AuthController extends Controller
         $token = $user->createToken('api-token')->plainTextToken;
 
         return response()->json([
-            'jwt-token' => $token,
+            'token' => $token,
             'user' => $user,
         ]);
     }
@@ -54,7 +54,7 @@ class AuthController extends Controller
         $token = $user->createToken('api-token')->plainTextToken;
 
         return response()->json([
-            'jwt-token' => $token,
+            'token' => $token,
             'user' => $user,
         ]);
     }
