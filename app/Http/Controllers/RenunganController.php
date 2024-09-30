@@ -96,4 +96,22 @@ class RenunganController extends Controller
         $renungan->delete();
         return redirect()->route('renungan.index')->with('success', 'Delete Renungan Successfully');
     }
+
+    // Method untuk mengambil semua renungan
+    public function getAllRenungan()
+    {
+        $renungan = Renungan::orderBy('date_renungan', 'desc')->get(); // Mengurutkan berdasarkan date_renungan descending
+
+        if ($renungan->isEmpty()) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Tidak ada renungan yang tersedia'
+            ], 404);
+        }
+
+        return response()->json([
+            'success' => true,
+            'data' => $renungan
+        ]);
+    }
 }
